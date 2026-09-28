@@ -1,0 +1,528 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Carixa — Minimal Car Visor Tissue Dispenser</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          fontFamily: {
+            sans: ['"Plus Jakarta Sans"', 'Inter', 'sans-serif'],
+          },
+          colors: {
+            brand: {
+              50: '#f8f8f8',
+              100: '#f3f3f4',
+              200: '#e5e5e7',
+              300: '#d1d1d6',
+              400: '#9e9ea7',
+              500: '#71717a',
+              900: '#18181b',
+            }
+          }
+        }
+      }
+    }
+  </script>
+  <style>
+    body {
+      background-color: #fafafb;
+      color: #111113;
+      -webkit-font-smoothing: antialiased;
+    }
+    .hero-gradient {
+      background: radial-gradient(circle at 65% 35%, rgba(245, 245, 247, 0.9) 0%, rgba(250, 250, 251, 1) 75%);
+    }
+    .feature-card {
+      background: #f4f4f6;
+      border-radius: 20px;
+      transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+    .feature-card:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 12px 28px -10px rgba(0, 0, 0, 0.05);
+    }
+    .product-grid-card {
+      background: #f4f4f6;
+      border-radius: 18px;
+      transition: all 0.25s ease;
+    }
+    .product-grid-card:hover {
+      transform: translateY(-3px);
+      background: #efeff2;
+    }
+    .badge-pill {
+      box-shadow: 0 4px 14px 0 rgba(0, 0, 0, 0.04);
+    }
+  </style>
+</head>
+<body class="selection:bg-neutral-200">
+
+  <!-- Minimal Header / Nav -->
+  <header class="w-full sticky top-0 z-50 bg-[#fafafb]/85 backdrop-blur-md border-b border-black/[0.04]">
+    <div class="max-w-6xl mx-auto px-6 h-16 flex items-center justify-between">
+      <a href="#" class="font-semibold text-lg tracking-tight text-neutral-900 flex items-center gap-2">
+        <span class="w-2.5 h-2.5 rounded-full bg-neutral-900 inline-block"></span>
+        <span>Carixa</span>
+      </a>
+
+      <!-- Center navigation links as seen in Apple / luxury audio aesthetic -->
+      <nav class="hidden md:flex items-center space-x-8 text-[13px] font-medium text-neutral-500 tracking-wide">
+        <a href="#hero" class="hover:text-neutral-900 transition">PRODUCTS</a>
+        <a href="#features" class="hover:text-neutral-900 transition">TECHNOLOGY</a>
+        <a href="#gallery" class="hover:text-neutral-900 transition">GALLERY</a>
+        <a href="#design" class="hover:text-neutral-900 transition">DESIGN</a>
+        <a href="#order" class="hover:text-neutral-900 transition">BUY NOW</a>
+      </nav>
+
+      <!-- Right Bag Icon -->
+      <div class="flex items-center gap-4">
+        <a href="#order" class="p-2 text-neutral-700 hover:text-neutral-900 transition">
+          <svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="1.6" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M16 11V7a4 4 0 00-8 0v4M5 9h14l1 12H4L5 9z"/>
+          </svg>
+        </a>
+      </div>
+    </div>
+  </header>
+
+  <!-- Hero Section (Exact 1:1 match of reference design) -->
+  <section id="hero" class="bg-white pt-12 sm:pt-20 pb-16 sm:pb-24 overflow-hidden">
+    <div class="max-w-6xl mx-auto px-6 grid grid-cols-1 lg:grid-cols-12 gap-10 items-center">
+      
+      <!-- Left Column: Typography & Button matching reference -->
+      <div class="lg:col-span-5 z-10 py-4 flex flex-col items-start text-left">
+        <h1 class="text-5xl sm:text-6xl lg:text-[76px] font-medium tracking-[-0.03em] text-neutral-900 leading-[1.04]">
+          Crafted<br>
+          for Focus.<br>
+          <span class="text-[#a8a8af] font-light">Designed<br>for Life.</span>
+        </h1>
+
+        <p class="mt-6 text-sm sm:text-base text-neutral-500 font-normal leading-relaxed max-w-sm">
+          An ultra-slim, clip-on leather visor dispenser engineered for effortless one-handed reach with zero eye distraction while driving.
+        </p>
+
+        <div class="mt-9 flex flex-wrap items-center gap-4">
+          <a href="#order" class="inline-flex items-center gap-3 px-6 py-3 rounded-full bg-white text-neutral-900 border border-neutral-200 shadow-sm hover:shadow hover:bg-neutral-50 transition text-[13px] font-medium group">
+            <span>Explore the Experience</span>
+            <svg class="w-3.5 h-3.5 text-neutral-700 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M7 17L17 7M17 7H7M17 7V17"/>
+            </svg>
+          </a>
+          <a href="#order" class="inline-flex items-center gap-2 px-5 py-3 rounded-full bg-neutral-900 text-white hover:bg-neutral-800 transition text-[13px] font-medium shadow-sm">
+            <span>Buy Now — ₹299</span>
+          </a>
+        </div>
+      </div>
+
+      <!-- Right Column: Massive Floating Product Shot with seamless white background -->
+      <div class="lg:col-span-7 flex justify-center lg:justify-end items-center relative">
+        <div class="w-full max-w-2xl transform lg:scale-110 lg:translate-x-4">
+          <img src="hero-seamless.jpg" alt="Carixa Car Sun Visor Tissue Dispenser" class="w-full h-auto object-contain select-none pointer-events-none drop-shadow-sm">
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- Numbered Story & Feature Bento Grid (Matching the Reference) -->
+  <section id="features" class="py-16 sm:py-24 max-w-6xl mx-auto px-6">
+    <div class="space-y-12 sm:space-y-16">
+      
+      <!-- 01 Row: Image Left, Text Right -->
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-center">
+        <div class="lg:col-span-6">
+          <div class="feature-card overflow-hidden p-3 aspect-[16/10] sm:aspect-[16/9] flex items-center justify-center">
+            <img src="product.jpg" alt="Craftsmanship and Detail" class="w-full h-full object-cover rounded-xl filter contrast-[1.02]">
+          </div>
+        </div>
+        <div class="lg:col-span-6 lg:pl-6 space-y-3">
+          <span class="text-3xl sm:text-4xl font-light text-neutral-900 tracking-tight font-mono">01</span>
+          <h2 class="text-2xl sm:text-3xl font-medium tracking-tight text-neutral-900">
+            Engineered for<br>Pure Performance.
+          </h2>
+          <p class="text-sm sm:text-base text-neutral-500 font-normal leading-relaxed pt-1 max-w-md">
+            Every detail is precisely crafted to deliver effortless reach, seamless cabin fit, and zero eye distraction while on the open road.
+          </p>
+        </div>
+      </div>
+
+      <!-- 02 Row: Text Left, Image Right -->
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-center">
+        <div class="lg:col-span-5 order-2 lg:order-1 space-y-3">
+          <span class="text-3xl sm:text-4xl font-light text-neutral-900 tracking-tight font-mono">02</span>
+          <h2 class="text-2xl sm:text-3xl font-medium tracking-tight text-neutral-900">
+            Technology That<br>Elevates Every Moment.
+          </h2>
+          <p class="text-sm sm:text-base text-neutral-500 font-normal leading-relaxed pt-1 max-w-md">
+            Dual spring-steel memory clips snap securely onto any sun visor without bending or marring leather upholstery. Designed with an ergonomic dispensing rim that never snags.
+          </p>
+        </div>
+        <div class="lg:col-span-7 order-1 lg:order-2">
+          <div class="feature-card overflow-hidden p-6 sm:p-10 flex flex-col justify-center items-center text-center">
+            <!-- Exploded schematic representation of the visor clip anatomy -->
+            <div class="w-full grid grid-cols-3 gap-4 items-center py-4">
+              <div class="bg-white/80 backdrop-blur rounded-2xl p-4 border border-black/[0.04] shadow-sm">
+                <span class="text-xs uppercase tracking-wider text-neutral-400 font-medium block">Layer 1</span>
+                <span class="text-sm font-medium text-neutral-900 mt-1 block">Wipe-Clean Leather</span>
+                <p class="text-[11px] text-neutral-500 mt-1">Water & UV resistant finish</p>
+              </div>
+              <div class="bg-white/80 backdrop-blur rounded-2xl p-4 border border-black/[0.04] shadow-sm">
+                <span class="text-xs uppercase tracking-wider text-neutral-400 font-medium block">Layer 2</span>
+                <span class="text-sm font-medium text-neutral-900 mt-1 block">Flap Closure</span>
+                <p class="text-[11px] text-neutral-500 mt-1">Ultra-quick refill design</p>
+              </div>
+              <div class="bg-white/80 backdrop-blur rounded-2xl p-4 border border-black/[0.04] shadow-sm">
+                <span class="text-xs uppercase tracking-wider text-neutral-400 font-medium block">Layer 3</span>
+                <span class="text-sm font-medium text-neutral-900 mt-1 block">Dual Steel Clips</span>
+                <p class="text-[11px] text-neutral-500 mt-1">Zero slip, zero vibration</p>
+              </div>
+            </div>
+            <p class="text-xs text-neutral-400 mt-4 tracking-wide uppercase">Precision Multi-Layer Interior Architecture</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- 03 Row: Image Left, Text Right -->
+      <div id="design" class="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-center">
+        <div class="lg:col-span-6">
+          <div class="feature-card overflow-hidden p-8 flex items-center justify-center min-h-[260px]">
+            <div class="flex items-center gap-6 justify-center">
+              <div class="w-36 h-36 rounded-2xl overflow-hidden shadow-md border border-neutral-200">
+                <img src="product.jpg" class="w-full h-full object-cover">
+              </div>
+              <div class="w-32 h-28 rounded-2xl bg-neutral-200/70 border border-neutral-300/50 flex flex-col items-center justify-center p-3 text-center">
+                <span class="text-[10px] uppercase font-semibold text-neutral-500 tracking-wider">Height</span>
+                <span class="text-2xl font-light text-neutral-900 mt-0.5">2<span class="text-xs">cm</span></span>
+                <span class="text-[11px] text-neutral-500 mt-0.5">15 × 5 × 2 cm</span>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="lg:col-span-6 lg:pl-6 space-y-3">
+          <span class="text-3xl sm:text-4xl font-light text-neutral-900 tracking-tight font-mono">03</span>
+          <h2 class="text-2xl sm:text-3xl font-medium tracking-tight text-neutral-900">
+            Minimal Design.<br>Maximum Impact.
+          </h2>
+          <p class="text-sm sm:text-base text-neutral-500 font-normal leading-relaxed pt-1 max-w-md">
+            A timeless silhouette that fits seamlessly into your cabin interior. Keeps tissues, driving masks, and wipes right within reach without cluttering door bins or glove compartments.
+          </p>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- Interactive Product In-Car Gallery & Multi-Position Slider -->
+  <section id="gallery" class="py-14 sm:py-20 max-w-5xl mx-auto px-6">
+    <div class="text-center max-w-xl mx-auto mb-10">
+      <span class="text-xs uppercase tracking-widest text-neutral-400 font-semibold">Everyday Versatility</span>
+      <h3 class="text-2xl sm:text-3xl font-medium text-neutral-900 mt-1">Multi-Position Cabin Mounting</h3>
+      <p class="text-sm text-neutral-500 mt-2">Visor, door side, or back seat pocket. Clip it wherever you need fast one-handed pull.</p>
+    </div>
+
+    <!-- Carousel Container -->
+    <div class="relative bg-white rounded-3xl p-4 sm:p-8 border border-neutral-200/80 shadow-sm overflow-hidden">
+      <!-- Main Slide View -->
+      <div class="relative w-full aspect-[4/3] sm:aspect-[16/10] max-h-[500px] rounded-2xl overflow-hidden bg-neutral-100 flex items-center justify-center">
+        
+        <!-- Slides -->
+        <div id="slide-0" class="gallery-slide absolute inset-0 transition-opacity duration-500 opacity-100 flex items-center justify-center">
+          <img src="gallery-1.png" alt="Installed on cab and door side" class="w-full h-full object-contain">
+          <div class="absolute bottom-4 left-4 sm:bottom-6 sm:left-6 bg-black/75 backdrop-blur-md text-white text-xs sm:text-sm px-4 py-2 rounded-xl">
+            Installed on the Sun Visor & Door Side
+          </div>
+        </div>
+
+        <div id="slide-1" class="gallery-slide absolute inset-0 transition-opacity duration-500 opacity-0 pointer-events-none flex items-center justify-center">
+          <img src="gallery-2.png" alt="Installed in co-pilot and rear seat" class="w-full h-full object-contain">
+          <div class="absolute bottom-4 left-4 sm:bottom-6 sm:left-6 bg-black/75 backdrop-blur-md text-white text-xs sm:text-sm px-4 py-2 rounded-xl">
+            Installed in the Co-pilot Visor & Rear Seat Pocket
+          </div>
+        </div>
+
+        <div id="slide-2" class="gallery-slide absolute inset-0 transition-opacity duration-500 opacity-0 pointer-events-none flex items-center justify-center">
+          <img src="gallery-3.png" alt="Product dimensions and profile" class="w-full h-full object-contain">
+          <div class="absolute bottom-4 left-4 sm:bottom-6 sm:left-6 bg-black/75 backdrop-blur-md text-white text-xs sm:text-sm px-4 py-2 rounded-xl">
+            Compact Form: 15 × 5 × 2 cm Ultra-Slim Profile
+          </div>
+        </div>
+
+        <div id="slide-3" class="gallery-slide absolute inset-0 transition-opacity duration-500 opacity-0 pointer-events-none flex items-center justify-center">
+          <img src="product.jpg" alt="In-car tissue pull" class="w-full h-full object-contain">
+          <div class="absolute bottom-4 left-4 sm:bottom-6 sm:left-6 bg-black/75 backdrop-blur-md text-white text-xs sm:text-sm px-4 py-2 rounded-xl">
+            Smooth One-Handed Reach While Driving
+          </div>
+        </div>
+
+        <!-- Next / Previous Controls -->
+        <button onclick="prevSlide()" class="absolute left-3 sm:left-5 top-1/2 -translate-y-1/2 w-10 h-10 sm:w-12 sm:h-12 rounded-full bg-white/90 hover:bg-white text-neutral-800 shadow-md flex items-center justify-center transition active:scale-95 z-10" aria-label="Previous image">
+          <svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M15 19l-7-7 7-7"/>
+          </svg>
+        </button>
+        <button onclick="nextSlide()" class="absolute right-3 sm:right-5 top-1/2 -translate-y-1/2 w-10 h-10 sm:w-12 sm:h-12 rounded-full bg-white/90 hover:bg-white text-neutral-800 shadow-md flex items-center justify-center transition active:scale-95 z-10" aria-label="Next image">
+          <svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7"/>
+          </svg>
+        </button>
+      </div>
+
+      <!-- Thumbnail Selector Row -->
+      <div class="grid grid-cols-4 gap-2.5 sm:gap-4 mt-4">
+        <button onclick="goToSlide(0)" class="thumb-nav border-2 border-neutral-900 rounded-xl overflow-hidden aspect-[4/3] bg-neutral-100 p-1 transition">
+          <img src="gallery-1.png" class="w-full h-full object-contain">
+        </button>
+        <button onclick="goToSlide(1)" class="thumb-nav border border-neutral-200 rounded-xl overflow-hidden aspect-[4/3] bg-neutral-100 p-1 hover:border-neutral-400 transition">
+          <img src="gallery-2.png" class="w-full h-full object-contain">
+        </button>
+        <button onclick="goToSlide(2)" class="thumb-nav border border-neutral-200 rounded-xl overflow-hidden aspect-[4/3] bg-neutral-100 p-1 hover:border-neutral-400 transition">
+          <img src="gallery-3.png" class="w-full h-full object-contain">
+        </button>
+        <button onclick="goToSlide(3)" class="thumb-nav border border-neutral-200 rounded-xl overflow-hidden aspect-[4/3] bg-neutral-100 p-1 hover:border-neutral-400 transition">
+          <img src="product.jpg" class="w-full h-full object-contain">
+        </button>
+      </div>
+    </div>
+  </section>
+
+  <!-- Interactive Order / Checkout Section -->
+  <section id="order" class="py-16 sm:py-20 max-w-4xl mx-auto px-6">
+    <div class="bg-white rounded-3xl p-6 sm:p-10 border border-neutral-200/80 shadow-sm">
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
+        
+        <!-- Image Preview -->
+        <div class="bg-[#f4f4f6] rounded-2xl p-6 flex flex-col items-center justify-center">
+          <img id="checkout-image" src="product.jpg" alt="Selected Product" class="w-64 h-64 object-contain rounded-xl">
+          <p id="checkout-tag" class="text-xs text-neutral-500 mt-3 font-medium">OEM Beige Color Match</p>
+        </div>
+
+        <!-- Configuration & Fast Checkout -->
+        <div>
+          <span class="text-[11px] font-semibold uppercase tracking-wider text-neutral-400">Order Online</span>
+          <h3 class="text-2xl font-semibold text-neutral-900 mt-1">Car Sun Visor Dispenser</h3>
+          
+          <div class="flex items-baseline gap-3 mt-3">
+            <span class="text-3xl font-bold text-neutral-900" id="order-price">₹299</span>
+            <span class="text-sm text-neutral-400 line-through">₹599</span>
+            <span class="text-xs bg-neutral-100 text-neutral-700 px-2.5 py-0.5 rounded-full font-medium">50% off • In Stock</span>
+          </div>
+
+          <!-- Color Chooser -->
+          <div class="mt-6">
+            <div class="text-xs font-medium text-neutral-700 uppercase tracking-wide">
+              Color Finish: <span id="color-label" class="font-normal text-neutral-900 normal-case">Beige (OEM Match)</span>
+            </div>
+            <div class="flex gap-3 mt-2.5">
+              <button onclick="pickColor('Beige (OEM Match)', this, 'product.jpg')" class="color-select-btn w-9 h-9 rounded-full bg-stone-200 border-2 border-neutral-900 ring-2 ring-neutral-900/10 focus:outline-none transition" title="Beige"></button>
+              <button onclick="pickColor('Stealth Black', this, 'https://images.unsplash.com/photo-1542282088-72c9c27ed0cd?auto=format&fit=crop&w=900&q=80')" class="color-select-btn w-9 h-9 rounded-full bg-neutral-900 border-2 border-transparent focus:outline-none transition" title="Black"></button>
+              <button onclick="pickColor('Cognac Brown', this, 'https://images.unsplash.com/photo-1617814076367-b759c7d7e738?auto=format&fit=crop&w=900&q=80')" class="color-select-btn w-9 h-9 rounded-full bg-amber-900 border-2 border-transparent focus:outline-none transition" title="Brown"></button>
+            </div>
+          </div>
+
+          <!-- Quantity Selector -->
+          <div class="mt-6">
+            <div class="text-xs font-medium text-neutral-700 uppercase tracking-wide mb-2.5">Bundle Option</div>
+            <div class="grid grid-cols-2 gap-3">
+              <button type="button" onclick="selectQty(1, 299, this)" class="qty-select-btn border-2 border-neutral-900 rounded-xl p-3 text-left transition focus:outline-none">
+                <span class="font-medium text-sm text-neutral-900 block">Single Unit</span>
+                <span class="text-xs text-neutral-500">₹299</span>
+              </button>
+              <button type="button" onclick="selectQty(2, 499, this)" class="qty-select-btn border border-neutral-200 rounded-xl p-3 text-left hover:border-neutral-400 transition focus:outline-none">
+                <span class="font-medium text-sm text-neutral-900 block">Twin Pack (2 Units)</span>
+                <span class="text-xs text-emerald-600 font-medium">₹499 (Save ₹99)</span>
+              </button>
+            </div>
+          </div>
+
+          <!-- Direct Buy Action -->
+          <div class="mt-8 space-y-2.5">
+            <button onclick="handleCheckout()" class="w-full bg-neutral-900 hover:bg-neutral-800 text-white font-medium text-sm py-4 rounded-xl transition duration-200 flex items-center justify-center gap-2 shadow-sm">
+              <span>Order Now — Cash on Delivery</span>
+              <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M14 5l7 7m0 0l-7 7m7-7H3"/>
+              </svg>
+            </button>
+            <p class="text-center text-[12px] text-neutral-400">7-Day Easy Replacement Guarantee</p>
+          </div>
+
+          <!-- Product Technical Specifications Grid -->
+          <div class="mt-8 pt-6 border-t border-neutral-100">
+            <h4 class="text-xs font-semibold text-neutral-800 uppercase tracking-wider mb-3">Product Details & Specifications</h4>
+            <div class="grid grid-cols-2 gap-y-2.5 gap-x-4 text-xs">
+              <div>
+                <span class="text-neutral-400 block">Generic Name</span>
+                <span class="font-medium text-neutral-900">Car Tissue Holders</span>
+              </div>
+              <div>
+                <span class="text-neutral-400 block">Country of Origin</span>
+                <span class="font-medium text-neutral-900">India 🇮🇳</span>
+              </div>
+              <div>
+                <span class="text-neutral-400 block">Dimensions (L × W × H)</span>
+                <span class="font-medium text-neutral-900">15 × 5 × 2 cm</span>
+              </div>
+              <div>
+                <span class="text-neutral-400 block">Dimension Unit</span>
+                <span class="font-medium text-neutral-900">Centimeters (cm)</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- Bottom Hero Banner (Sound that Inspires / Design that Lasts) -->
+  <section class="max-w-6xl mx-auto px-6 pb-20">
+    <div class="relative overflow-hidden rounded-3xl bg-gradient-to-r from-[#ececef] via-[#f0f0f3] to-[#e6e6ea] p-8 sm:p-14 border border-black/[0.04]">
+      <!-- Background subtle curves -->
+      <div class="absolute -right-20 -bottom-20 w-96 h-96 rounded-full bg-white/40 filter blur-3xl pointer-events-none"></div>
+
+      <div class="relative z-10 flex flex-col md:flex-row items-start md:items-center justify-between gap-6">
+        <div>
+          <h2 class="text-2xl sm:text-4xl font-medium tracking-tight text-neutral-900 leading-tight">
+            Crafted for Comfort.<br>
+            Design that Lasts.
+          </h2>
+          <p class="text-neutral-500 text-sm sm:text-base mt-2 font-normal">
+            Elevate every drive with thoughtfully considered car interior design.
+          </p>
+        </div>
+
+        <a href="#order" class="inline-flex items-center gap-2 px-6 py-3.5 rounded-full bg-white text-neutral-900 text-[13px] font-medium badge-pill hover:bg-neutral-50 transition group shadow-sm border border-neutral-200/60">
+          <span>Discover More</span>
+          <svg class="w-3.5 h-3.5 text-neutral-500 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M7 17L17 7M17 7H7M17 7V17"/>
+          </svg>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Minimal Footer (Matching the reference layout) -->
+  <footer class="border-t border-black/[0.05] bg-white py-10 text-[11px] text-neutral-400">
+    <div class="max-w-6xl mx-auto px-6 flex flex-col md:flex-row items-center justify-between gap-6">
+      
+      <!-- Left text links -->
+      <div class="flex items-center gap-6 uppercase tracking-wider font-medium text-neutral-500">
+        <a href="#hero" class="hover:text-neutral-900 transition">About</a>
+        <a href="#order" class="hover:text-neutral-900 transition">Careers</a>
+        <a href="#order" class="hover:text-neutral-900 transition">Press</a>
+        <a href="#order" class="hover:text-neutral-900 transition">Contact</a>
+      </div>
+
+      <!-- Center social icons -->
+      <div class="flex items-center gap-5 text-neutral-600">
+        <a href="#" class="hover:text-neutral-900 transition" aria-label="X">
+          <svg class="w-3.5 h-3.5" fill="currentColor" viewBox="0 0 24 24">
+            <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/>
+          </svg>
+        </a>
+        <a href="#" class="hover:text-neutral-900 transition" aria-label="Instagram">
+          <svg class="w-3.5 h-3.5" fill="currentColor" viewBox="0 0 24 24">
+            <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/>
+          </svg>
+        </a>
+        <a href="#" class="hover:text-neutral-900 transition" aria-label="YouTube">
+          <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24">
+            <path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/>
+          </svg>
+        </a>
+      </div>
+
+      <!-- Right legal -->
+      <div class="flex items-center gap-6 uppercase tracking-wider font-medium text-neutral-500">
+        <a href="#" class="hover:text-neutral-900 transition">Privacy</a>
+        <a href="#" class="hover:text-neutral-900 transition">Terms</a>
+      </div>
+
+    </div>
+  </footer>
+
+  <script>
+    let currentSlide = 0;
+    const totalSlides = 4;
+
+    function goToSlide(index) {
+      currentSlide = index;
+      document.querySelectorAll('.gallery-slide').forEach((slide, i) => {
+        if (i === index) {
+          slide.classList.remove('opacity-0', 'pointer-events-none');
+          slide.classList.add('opacity-100');
+        } else {
+          slide.classList.remove('opacity-100');
+          slide.classList.add('opacity-0', 'pointer-events-none');
+        }
+      });
+
+      document.querySelectorAll('.thumb-nav').forEach((thumb, i) => {
+        if (i === index) {
+          thumb.classList.remove('border-neutral-200');
+          thumb.classList.add('border-2', 'border-neutral-900');
+        } else {
+          thumb.classList.remove('border-2', 'border-neutral-900');
+          thumb.classList.add('border', 'border-neutral-200');
+        }
+      });
+    }
+
+    function nextSlide() {
+      let next = (currentSlide + 1) % totalSlides;
+      goToSlide(next);
+    }
+
+    function prevSlide() {
+      let prev = (currentSlide - 1 + totalSlides) % totalSlides;
+      goToSlide(prev);
+    }
+
+    let activeColor = 'Beige (OEM Match)';
+    let activePrice = 299;
+
+    function pickColor(name, btn, imageSrc) {
+      activeColor = name;
+      document.getElementById('color-label').innerText = name;
+      document.querySelectorAll('.color-select-btn').forEach(b => {
+        b.classList.remove('border-neutral-900', 'ring-2', 'ring-neutral-900/10');
+        b.classList.add('border-transparent');
+      });
+      btn.classList.remove('border-transparent');
+      btn.classList.add('border-neutral-900', 'ring-2', 'ring-neutral-900/10');
+
+      if (imageSrc) {
+        document.getElementById('checkout-image').src = imageSrc;
+      }
+      document.getElementById('checkout-tag').innerText = name + ' Finish';
+    }
+
+    function selectQty(count, price, btn) {
+      activePrice = price;
+      document.getElementById('order-price').innerText = '₹' + price;
+      if (btn) {
+        document.querySelectorAll('.qty-select-btn').forEach(b => {
+          b.classList.remove('border-2', 'border-neutral-900');
+          b.classList.add('border', 'border-neutral-200');
+        });
+        btn.classList.remove('border', 'border-neutral-200');
+        btn.classList.add('border-2', 'border-neutral-900');
+      }
+    }
+
+    function scrollToOrder(preference) {
+      document.getElementById('order').scrollIntoView({ behavior: 'smooth' });
+    }
+
+    function handleCheckout() {
+      alert(`Order Confirmed!\n\nProduct: Carixa Visor Dispenser (${activeColor})\nTotal: ₹${activePrice}\nPayment: Cash on Delivery / UPI on Delivery\nDelivery: Free doorstep delivery (2-4 business days)`);
+    }
+  </script>
+</body>
+</html>
